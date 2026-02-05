@@ -170,16 +170,32 @@ Contains:
 
 ## Service-Specific Queries
 
-### Lambda
-Searches for: ERROR, Exception, Traceback, failed
+```python
+# Lambda
+Searches for: 
+- ERROR, 
+- Exception, 
+- Traceback, 
+- failed
 
-### ECS
-Searches for: An unexpected error, unhandled exception, ERROR, FATAL
+# ECS
+Searches for: 
+- An unexpected error, 
+- unhandled exception, 
+- ERROR, 
+- FATAL
 
-### RDS
-Searches for: ERROR, FATAL, PANIC, deadlock, connection issues
+# RDS
+Searches for: 
+- ERROR, 
+- FATAL, 
+- PANIC, 
+- deadlock, 
+- connection issues
 
-Custom queries can be added in `queries/` directory.
+# Custom Queries
+- Custom queries can be added in `queries/` directory.
+```
 
 ## Deployment Commands
 
@@ -295,7 +311,7 @@ Internal use only
 
 ## Contributors
 
-- [Your Name]
+- Vin Lonje
 
 ## Changelog
 

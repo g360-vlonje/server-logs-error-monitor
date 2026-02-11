@@ -4,9 +4,21 @@ fields @timestamp, @message
 | filter @message like /ERROR:/
   or @message like /FATAL:/
   or @message like /PANIC:/
-  or @message like /deadlock/i
-  or @message like /connection reset/i
-  or @message like /could not connect/i
-  or @message like /syntax error/i
-  or @message like /duplicate key/i
-  or @message like /constraint violation/i
+  or @message like /deadlock/
+  or @message like /Deadlock/
+  or @message like /DEADLOCK/
+  or @message like /connection reset/
+  or @message like /Connection reset/
+  or @message like /CONNECTION RESET/
+  or @message like /could not connect/
+  or @message like /Could not connect/
+  or @message like /COULD NOT CONNECT/
+  or @message like /syntax error/
+  or @message like /Syntax error/
+  or @message like /SYNTAX ERROR/
+  or @message like /duplicate key/
+  or @message like /Duplicate key/
+  or @message like /DUPLICATE KEY/
+  or @message like /constraint violation/
+  or @message like /Constraint violation/
+  or @message like /CONSTRAINT VIOLATION/

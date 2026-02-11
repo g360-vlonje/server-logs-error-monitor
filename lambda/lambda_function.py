@@ -59,10 +59,14 @@ fields @timestamp, @message, @requestId, @logStream
 | limit 10000
 | filter @message like /ERROR/
   or @message like /Error/
+  or @message like /error/
   or @message like /Exception/
   or @message like /exception/
+  or @message like /EXCEPTION/
   or @message like /Traceback/
-  or @message like /failed/i
+  or @message like /traceback/
+  or @message like /failed/
+  or @message like /Failed/
   or @message like /FAILED/
   or @level = "ERROR"
   or @level = "FATAL"
@@ -73,13 +77,20 @@ fields @timestamp, @message, @logStream
 | sort @timestamp desc
 | limit 10000
 | filter @message like /An unexpected error/
-  or @message like /unhandled exception/i
+  or @message like /Unhandled exception/
+  or @message like /unhandled exception/
   or @message like /ERROR/
   or @message like /Error/
+  or @message like /error/
   or @message like /FATAL/
   or @message like /Fatal/
-  or @message like /failed/i
-  or @message like /exception/i
+  or @message like /fatal/
+  or @message like /FAILED/
+  or @message like /Failed/
+  or @message like /failed/
+  or @message like /EXCEPTION/
+  or @message like /Exception/
+  or @message like /exception/
 """
 
 RDS_QUERY = r"""
@@ -89,12 +100,24 @@ fields @timestamp, @message
 | filter @message like /ERROR:/
   or @message like /FATAL:/
   or @message like /PANIC:/
-  or @message like /deadlock/i
-  or @message like /connection reset/i
-  or @message like /could not connect/i
-  or @message like /syntax error/i
-  or @message like /duplicate key/i
-  or @message like /constraint violation/i
+  or @message like /deadlock/
+  or @message like /Deadlock/
+  or @message like /DEADLOCK/
+  or @message like /connection reset/
+  or @message like /Connection reset/
+  or @message like /CONNECTION RESET/
+  or @message like /could not connect/
+  or @message like /Could not connect/
+  or @message like /COULD NOT CONNECT/
+  or @message like /syntax error/
+  or @message like /Syntax error/
+  or @message like /SYNTAX ERROR/
+  or @message like /duplicate key/
+  or @message like /Duplicate key/
+  or @message like /DUPLICATE KEY/
+  or @message like /constraint violation/
+  or @message like /Constraint violation/
+  or @message like /CONSTRAINT VIOLATION/
 """
 
 # Select query based on service type

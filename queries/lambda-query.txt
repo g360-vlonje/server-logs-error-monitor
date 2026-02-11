@@ -3,10 +3,14 @@ fields @timestamp, @message, @requestId, @logStream
 | limit 10000
 | filter @message like /ERROR/
   or @message like /Error/
+  or @message like /error/
   or @message like /Exception/
   or @message like /exception/
+  or @message like /EXCEPTION/
   or @message like /Traceback/
-  or @message like /failed/i
+  or @message like /traceback/
+  or @message like /failed/
+  or @message like /Failed/
   or @message like /FAILED/
   or @level = "ERROR"
   or @level = "FATAL"
